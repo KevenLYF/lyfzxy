@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <head>
+      <link rel="stylesheet" href="flipclock.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="flipclock.min.js"></script>
+    </head>
+  </head>
+
   <body>
-    <h1>Test</h1>
-    <h2>Test2</h2>
+    <div class="clock"></div>
+
+    <script type="text/javascript">
+      var clock = $(".clock").FlipClock(3600 * 24 * 2349, {
+        clockFace: "DailyCounter"
+      });
+    </script>
+
+
   </body>
 </html>
