@@ -60,6 +60,7 @@
 .flip-clock-wrapper {
   text-align: center;
   position: relative;
+  padding-left: 10%;
   width: 100%;
   margin: 1em;
 }
