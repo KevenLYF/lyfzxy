@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <head>
-      <link rel="stylesheet" href="flipclock.css" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="flipclock.min.js"></script>
-    </head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="flipclock.min.js"></script>
+    <link rel="stylesheet" href="flipclock.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
 
   <body>
-    <div class="clock"></div>
-
+    <div class="container">
+      <div class="clock-holder">
+        <div class="clock"></div>
+      </div>
+    </div>
     <script type="text/javascript">
-      var clock = $(".clock").FlipClock(3600 * 24 * 2349, {
-        clockFace: "DailyCounter"
+      var begin = new Date("November 10, 2012 GMT+08:00").toLocaleString(
+        "en-US",
+        {
+          timeZone: "Asia/Shanghai"
+        }
+      );
+      begin = new Date(begin);
+
+      var asiaTime = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Shanghai"
       });
+      asiaTime = new Date(asiaTime);
+
+      var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+
+      var diffDays = Math.round(
+        Math.abs((asiaTime.getTime() - begin.getTime()) / oneDay)
+      );
+
+      const sec = asiaTime.getSeconds();
+      const min = asiaTime.getMinutes();
+      const hour = asiaTime.getHours();
+      console.log(sec);
+      console.log(min);
+      console.log(hour);
+
+      const curTimeOutOfDays = (sec + min * 60 + hour * 3600) / (24 * 3600);
+
+      var clock = $(".clock").FlipClock(
+        3600 * 24 * (diffDays + curTimeOutOfDays),
+        {
+          clockFace: "DailyCounter"
+        }
+      );
     </script>
-
-
   </body>
 </html>
