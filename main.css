@@ -13,11 +13,86 @@ body {
 }
 
 .container {
-  position: relative;
-  width: 100%;
+  width: 55%;
   margin: 0 auto;
 }
 
 .clock-holder {
-  padding-top: 100px;
+  padding-top: 150px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 30px;
+  }
+
+  .flip-clock-wrapper ul {
+    width: 30px;
+    height: 45px;
+    font-size: 80px;
+  }
+
+  .flip-clock-dot.top {
+    top: 20px;
+  }
+
+  .flip-clock-dot.bottom {
+    bottom: 60px;
+  }
+
+  .flip-clock-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .flip-clock-wrapper ul li a div {
+    height: 70%;
+  }
+
+  .clock-holder {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 30px;
+  }
+
+  .flip-clock-wrapper ul {
+    width: 30px;
+    height: 45px;
+    font-size: 80px;
+  }
+
+  .flip-clock-dot.top {
+    top: 20px;
+  }
+
+  .flip-clock-dot.bottom {
+    bottom: 60px;
+  }
+
+  .flip-clock-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .flip-clock-wrapper ul li a div {
+    height: 70%;
+  }
+
+  .clock-holder {
+    padding-top: 50px;
+  }
 }
